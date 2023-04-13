@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./font/fontawesome-free-6.4.0-web/css/all.min.css">
+    <style>
+        body{
+           width: 1400px;
+           margin: 0px auto;
+        }
+        header{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #373737;
+            width: auto;
+            height: 100px;
+            
+        }
+
+        .logo{
+            margin-left: 70px
+        }
+
+        .cart{
+            width: auto;
+            margin-right: 120px;
+            margin-left: 100px;
+            justify-content: space-between;
+        }
+
+        .btn_login{
+            width: 150px;
+            height: 50px;
+            margin-left: 20px;
+            font-size: 20px;
+            background-color: #ffe24c;
+        }
+        .menu ul li:hover>a{
+            color: #b3aeae;
+        }
+        
+
+        
+
+        ul{
+            width: 700px ;
+            display: flex;
+            list-style: none;
+            padding: 0px;
+        }
+
+        li a{
+            text-decoration: none;  
+            color: #fff;
+            font-size: 18px;
+        }
+        li{
+            padding: 0 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+           <img src="logo.PNG" alt=""> 
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="#">Product</a></li>
+                <li><a href="#">Today's Deal</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <div class="cart">
+            <i class="fa-solid fa-cart-shopping" style="color: #fff;"></i>
+            <input class="btn_login" type="button" value="Sign Up">
+        </div>
+    </header>
+</body>
+</html>
