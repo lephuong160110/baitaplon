@@ -6,6 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./font/fontawesome-free-6.4.0-web/css/all.css">
+    <script>
+        // Set the date we're counting down to
+        var countDownDate = new Date("May 5, 2023 15:37:25").getTime();
+        
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+        
+          // Get today's date and time
+          var now = new Date().getTime();
+            
+          // Find the distance between now and the count down date
+          var distance = countDownDate - now;
+            
+          // Time calculations for days, hours, minutes and seconds
+          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+          // Output the result in an element with id="demo"
+          document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+          + minutes + "m " + seconds + "s ";
+            
+          // If the count down is over, write some text 
+          if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("demo").innerHTML = "EXPIRED";
+          }
+        }, 1000);
+        </script>
     <style>
         body{
            width: 1400px;
@@ -19,7 +49,7 @@
             background-color: #373737;
             width: auto;
             height: 100px;
-            margin-left: 50px;
+            
             
         }
 
@@ -29,7 +59,7 @@
 
         .cart{
             width: auto;
-            margin-right: 120px;
+            margin-right: 80px;
             margin-left: 100px;
             justify-content: space-between;
         }
@@ -71,6 +101,7 @@
             align-items: center;
             margin: 0px auto;
             margin-top: 12px;
+            margin-left: 170px;
 
         }
 
@@ -113,6 +144,7 @@
             margin-top: 12px;
             background: linear-gradient(#a0ade6,#d9c5f0);
             margin-right: 140px;
+            margin-left: 170px;
 
         }
 
@@ -163,7 +195,7 @@
             margin: 0px auto;
             justify-content: space-between;
             margin-right: 100px;
-            margin-left: 200px;
+            margin-left: 170px;
             padding-top: 50px;
         }
         .btn4{
@@ -189,12 +221,112 @@
             font-size: 50px;
         }
 
+        #demo{
+            padding: 0px 10px;
+            width: fit-content;
+            font-size: 20px;
+            margin: 0px;
+            background-color: #373737;
+            color: white;
+            height: 30px;
+            
+        }
+        
+        .itemhearderleft{
+            width: 400px;
+            display: flex;
+            align-items: center;
+            margin: 0px auto;
+            
+            justify-content: space-between;
+        }
+        .item{
+            
+            display: flex;
+            width: 1060px;
+            margin: 0px auto;
+            justify-content: space-between;
+            margin-left: 170px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            
+
+        }
+
+        .items{   
+            display: grid;
+            grid-template-columns: 265px 265px 265px 265px ;
+            grid-template-rows: auto auto;
+            width: 1060px;
+            margin: 0px auto;
+            margin-left: 170px;
+            
+            
+           
+        }
+        .itemslist{
+            background-color: rgba(255, 255, 255, 0.8);
+            
+            margin: 5px;
+            font-size: 30px;
+            text-align: center;    }
+        .itemslist:hover{
+            background-color: #cecdcf;
+            color: white;
+        }
+
+                        
+        
+
+        .rating{
+            display: flex;
+            height: 30px;
+            align-items: center;
+            margin-left: 30px;
+        }
+        .deviename{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 200px;
+            margin-left: 30px;
+        }
+        #price{
+            width: 160px;
+            height: 50px;
+            background-color: none;
+            background-color: #161615;
+            color: rgb(243, 240, 77);
+        }
+
+        .itemsbtn{
+            width: 254px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        label{
+            margin-left: 15px;
+        }
+
+        .page2{
+            background-color: #F1F1F1;
+        }
+        .page1{
+            background-color: #FFF;
+        }
+        
+
+       
+      
+
 
 
         
     </style>
 </head>
 <body>
+    <div class="page1">
     <header>
         <div class="logo">
            <img src="logo.PNG" alt=""> 
@@ -253,6 +385,159 @@
         <button class="btn4"><i class="fa-solid fa-laptop"></i><br> Laptop & Computer</button>
 
 
+    </div>
+
+</div>
+
+    <div class="page2">
+
+    <div class="item">
+        <div class="itemheader">
+            <div class="itemhearderleft">
+                <h2>Deal of the day</h2>
+                <p>Offer Ends:</p><p id="demo"></p>
+
+            </div>
+        </div>
+
+        <div class="iteamheaderright">
+            <p>veiw all</p>
+        </div>
+    </div>
+
+        <div class="items">
+            <div class="itemslist">
+                <img src="iphone.jpg" alt="" width="240px">
+                <div class="deviename">
+                    <p style="margin: 0px; text-align: none;">Iphone 13</p>
+                    <i class="fa-regular fa-bookmark"></i>
+                </div>
+            <div class="rating">
+                <i class="fa-sharp fa-solid fa-star" style="color: #faeb4c; font-size: 15px;"></i> <p style="font-size: 15px;"> 4.8</p><p style="font-size: 15px;">(1280 Review)</p>
+            </div>
+
+            <div class="itemsbtn">
+            <label for="price">999$</label>
+            <input id="price" type="button" value="Add to cart">
+        </div>
+                        
+              
+
+
+        </div>
+        <div class="itemslist">
+            <img src="iphone.jpg" alt="" width="240px">
+            <div class="deviename">
+                <p style="margin: 0px; text-align: none;">Iphone 13</p>
+                <i class="fa-regular fa-bookmark"></i>
+            </div>
+        <div class="rating">
+            <i class="fa-sharp fa-solid fa-star" style="color: #faeb4c; font-size: 15px;"></i> <p style="font-size: 15px;"> 4.8</p><p style="font-size: 15px;">(1280 Review)</p>
+        </div>
+
+        <div class="itemsbtn">
+        <label for="price">999$</label>
+        <input id="price" type="button" value="Add to cart">
+    </div>
+
+            </div>
+            <div class="itemslist">
+                <img src="iphone.jpg" alt="" width="240px">
+                <div class="deviename">
+                    <p style="margin: 0px; text-align: none;">Iphone 13</p>
+                    <i class="fa-regular fa-bookmark"></i>
+                </div>
+            <div class="rating">
+                <i class="fa-sharp fa-solid fa-star" style="color: #faeb4c; font-size: 15px;"></i> <p style="font-size: 15px;"> 4.8</p><p style="font-size: 15px;">(1280 Review)</p>
+            </div>
+
+            <div class="itemsbtn">
+            <label for="price">999$</label>
+            <input id="price" type="button" value="Add to cart">
+        </div>
+
+            </div>
+            <div class="itemslist">
+                <img src="iphone.jpg" alt="" width="240px">
+                <div class="deviename">
+                    <p style="margin: 0px; text-align: none;">Iphone 13</p>
+                    <i class="fa-regular fa-bookmark"></i>
+                </div>
+            <div class="rating">
+                <i class="fa-sharp fa-solid fa-star" style="color: #faeb4c; font-size: 15px;"></i> <p style="font-size: 15px;"> 4.8</p><p style="font-size: 15px;">(1280 Review)</p>
+            </div>
+
+            <div class="itemsbtn">
+            <label for="price">999$</label>
+            <input id="price" type="button" value="Add to cart">
+        </div>
+
+            </div>
+            <div class="itemslist">
+                <img src="iphone.jpg" alt="" width="240px">
+                <div class="deviename">
+                    <p style="margin: 0px; text-align: none;">Iphone 13</p>
+                    <i class="fa-regular fa-bookmark"></i>
+                </div>
+            <div class="rating">
+                <i class="fa-sharp fa-solid fa-star" style="color: #faeb4c; font-size: 15px;"></i> <p style="font-size: 15px;"> 4.8</p><p style="font-size: 15px;">(1280 Review)</p>
+            </div>
+
+            <div class="itemsbtn">
+            <label for="price">999$</label>
+            <input id="price" type="button" value="Add to cart">
+        </div>
+
+            </div>
+            <div class="itemslist">
+                <img src="iphone.jpg" alt="" width="240px">
+                <div class="deviename">
+                    <p style="margin: 0px; text-align: none;">Iphone 13</p>
+                    <i class="fa-regular fa-bookmark"></i>
+                </div>
+            <div class="rating">
+                <i class="fa-sharp fa-solid fa-star" style="color: #faeb4c; font-size: 15px;"></i> <p style="font-size: 15px;"> 4.8</p><p style="font-size: 15px;">(1280 Review)</p>
+            </div>
+
+            <div class="itemsbtn">
+            <label for="price">999$</label>
+            <input id="price" type="button" value="Add to cart">
+        </div>
+
+            </div>
+            <div class="itemslist">
+                <img src="iphone.jpg" alt="" width="240px">
+                <div class="deviename">
+                    <p style="margin: 0px; text-align: none;">Iphone 13</p>
+                    <i class="fa-regular fa-bookmark"></i>
+                </div>
+            <div class="rating">
+                <i class="fa-sharp fa-solid fa-star" style="color: #faeb4c; font-size: 15px;"></i> <p style="font-size: 15px;"> 4.8</p><p style="font-size: 15px;">(1280 Review)</p>
+            </div>
+
+            <div class="itemsbtn">
+            <label for="price">999$</label>
+            <input id="price" type="button" value="Add to cart">
+        </div>
+
+            </div>
+            <div class="itemslist">
+                <img src="iphone.jpg" alt="" width="240px">
+                <div class="deviename">
+                    <p style="margin: 0px; text-align: none;">Iphone 13</p>
+                    <i class="fa-regular fa-bookmark"></i>
+                </div>
+            <div class="rating">
+                <i class="fa-sharp fa-solid fa-star" style="color: #faeb4c; font-size: 15px;"></i> <p style="font-size: 15px;"> 4.8</p><p style="font-size: 15px;">(1280 Review)</p>
+            </div>
+
+            <div class="itemsbtn">
+            <label for="price">999$</label>
+            <input id="price" type="button" value="Add to cart">
+        </div>
+
+            </div>
+        </div>
     </div>
 
 </body>
